@@ -1,0 +1,39 @@
+int boton;
+int placa;
+int valorSensor = 61;  
+void setup() {
+ //Seteo de la velocidad del puerto serial
+ Serial.begin(100);
+ // declarar boton como una SALIDA:
+  pinMode(boton, OUTPUT);
+}
+void loop() {
+  // leer el valor del sensor:
+  valorSensor = analogRead(A0);
+   Serial.println(valorSensor); // activa boton
+  while (valorSensor > 0){
+   digitalWrite(placa, HIGH);
+   delay(10);
+   if (valorSensor < 30)
+     Serial.println("No hay Incendio");
+     if (valorSensor > 30 and valorSensor < 34);
+     Serial.println("Incendio nivel 1");
+   if (valorSensor > 35 and valorSensor < 39);
+     Serial.println("Incendio nivel 2");
+   if (valorSensor > 40 and valorSensor < 44);
+     Serial.println("Incendio nivel 3");
+   if (valorSensor > 45 and valorSensor < 49);
+     Serial.println("Incendio nivel 4");
+   if (valorSensor > 50 and valorSensor < 54);
+     Serial.println("Incendio nivel f");
+   if (valorSensor > 55 and valorSensor < 59);
+     Serial.println("Incendio nivel g");
+   if (valorSensor > 60 and valorSensor < 64);
+     Serial.println("Incendio nivel h");
+   if (valorSensor > 65 and valorSensor < 69);
+     Serial.println("Incendio nivel i");
+   if (valorSensor > 70);
+     Serial.println("Incendio nivel j");
+  
+    }
+}
